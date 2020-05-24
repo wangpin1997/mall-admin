@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: admin
+
+  cloud:
+    nacos:
+      config:
+        server-addr: config.wpin.store:80                             #地址
+        name: ${spring.application.name}                              #名字
+        shared-dataids: nacos.yml,db.product.yml,mybatis.yml   #对应的dataId
+        file-extension: yml                                           #引入文件格式
+        namespace: 0abd1eef-7bdb-433d-967f-3c499a61998f               #命名空间
+#        refreshable-dataids: nacos.yml,db.product.yml,mybatis.yml  #修改了之后自动刷新
+  profiles:
+    active: test                                                      #指定运行环境
+
+
